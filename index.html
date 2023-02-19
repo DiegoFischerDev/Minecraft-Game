@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MineCraft</title>
+
+  <style>
+
+    @media (max-width: 840px) {
+      body {
+        flex-direction: column !important;
+      }
+
+      section {
+        margin: auto;
+      }
+    }
+
+    body {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      background-image: url("https://rare-gallery.com/uploads/posts/582064-minecraft-picture.jpg");
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    h3 {
+      margin: 0;
+    }
+
+    button {
+      margin: 0 10px;
+    }
+
+    li {
+      list-style-type: none;
+      word-break: break-all;
+    } 
+
+    section {
+      width: 250px;
+      background-color: gainsboro;
+      padding: 30px;
+      margin: 30px;
+      border-radius: 20px;
+    }
+
+    .form {
+      margin-top: 30px;
+    }
+
+    .ImagemProfile {
+      width: 220px;
+      height: 180px;
+    }
+
+    .oreImage {
+      width: 25px;
+      margin: 0 10px;
+    }
+
+    .divItensInventario {
+      width: 250px;
+      justify-content: space-between;
+    }
+
+    .divItensInventarioInside {
+      width: 200px;
+      justify-content: space-between;
+      margin-left: 20px;
+    }
+
+    .inventarioItem {
+      justify-content: space-between;
+      width: 220px;
+      margin-left: 30px;
+    }
+
+    ul {
+      margin-left: -30px;
+      padding: 0;
+    }
+
+    ul div {
+      align-items: center;
+      display: flex;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<section id="Steve">
+  <h1>Steve</h1>
+  <image class="ImagemProfile" src="https://w7.pngwing.com/pngs/212/212/png-transparent-minecraft-character-illustration-minecraft-pocket-edition-minecraft-story-mode-terraria-horse-minecraft-video-game-playstation-4-survival-thumbnail.png" style="width: 220px"></image>
+
+
+  <ul>
+    <div class="divItensInventario"><div class="divItensInventarioInside"><image class="oreImage" src="https://res.cloudinary.com/di9oiqvom/image/upload/v1676728504/Minecraft/stripped_spruce_wood_czox2h.png"></image>Madeira<h2 id="steveMadeira" ></h2></div><div><button onclick="SteveAddOre('madeira')">+</button><button onclick="SteveRemoveOre('madeira')">-</button></div></div>
+    <div class="divItensInventario"><div class="divItensInventarioInside"><image class="oreImage" src="https://res.cloudinary.com/di9oiqvom/image/upload/v1676728503/Minecraft/cobblestone_tyrx1k.png" ></image>Pedra<h2 id="stevePedra" ></h2></div><div><button onclick="SteveAddOre('pedra')">+</button><button onclick="SteveRemoveOre('pedra')">-</button></div></div>
+    <div class="divItensInventario"><div class="divItensInventarioInside"><image class="oreImage" src="https://res.cloudinary.com/di9oiqvom/image/upload/v1676728504/Minecraft/iron_ingot_gtykv1.png" ></image> Ferro<h2 id="steveFerro" ></h2></div><div><button onclick="SteveAddOre('ferro')">+</button><button onclick="SteveRemoveOre('ferro')">-</button></div></div>
+    <div class="divItensInventario"><div class="divItensInventarioInside"><image class="oreImage" src="https://res.cloudinary.com/di9oiqvom/image/upload/v1676728504/Minecraft/raw_gold_gr9awc.png" ></image> Ouro<h2 id="steveOuro" ></h2></div><div><button onclick="SteveAddOre('ouro')">+</button><button onclick="SteveRemoveOre('ouro')">-</button></div></div>
+    <div class="divItensInventario"><div class="divItensInventarioInside"><image class="oreImage" src="https://res.cloudinary.com/di9oiqvom/image/upload/v1676728503/Minecraft/diamond_oqxakz.png" ></image> Diamante<h2 id="steveDiamante" ></h2></div><div><button onclick="SteveAddOre('diamante')">+</button><button onclick="SteveRemoveOre('diamante')">-</button></div></div>
+    <div class="divItensInventario"><div class="divItensInventarioInside"><image class="oreImage" src="https://res.cloudinary.com/di9oiqvom/image/upload/v1676728503/Minecraft/emerald_kagulm.png" ></image> Esmeralda<h2 id="steveEsmeralda" ></h2></div><div><button onclick="SteveAddOre('esmeralda')">+</button><button onclick="SteveRemoveOre('esmeralda')">-</button></div></div>
+  </ul>
+
+  <a href='#' onclick="()=>{}"><image style="width: 80px;" src="https://static.wikia.nocookie.net/thetekkit/images/1/10/Iron_Chest.png/revision/latest?cb=20121020224539"></image>Baú Steve</a>
+
+
+  <div class="form">
+    <input id="steveInput" placeholder="New Item" maxlength="25">
+    <button onclick="addSteveItem()">Add</button>
+  </div>
+  <ul id="steveItens">
+  </ul>
+
+</section id="Alexa">
+
+<section>
+  <h1>Alexa</h1>
+  <image class="ImagemProfile" src="https://w7.pngwing.com/pngs/124/45/png-transparent-minecraft-story-mode-minecraft-pocket-edition-xbox-360-video-game-minecraft-angle-mojang-dead-island-thumbnail.png" ></image>
+
+
+  <ul>
+    <div class="divItensInventario"><div class="divItensInventarioInside"><image class="oreImage" src="https://res.cloudinary.com/di9oiqvom/image/upload/v1676728504/Minecraft/stripped_spruce_wood_czox2h.png"></image>Madeira<h2 id="alexaMadeira" ></h2></div><div><button onclick="alexaAddOre('madeira')">+</button><button onclick="alexaRemoveOre('madeira')">-</button></div></div>
+    <div class="divItensInventario"><div class="divItensInventarioInside"><image class="oreImage" src="https://res.cloudinary.com/di9oiqvom/image/upload/v1676728503/Minecraft/cobblestone_tyrx1k.png" ></image>Pedra<h2 id="alexaPedra" ></h2></div><div><button onclick="alexaAddOre('pedra')">+</button><button onclick="alexaRemoveOre('pedra')">-</button></div></div>
+    <div class="divItensInventario"><div class="divItensInventarioInside"><image class="oreImage" src="https://res.cloudinary.com/di9oiqvom/image/upload/v1676728504/Minecraft/iron_ingot_gtykv1.png" ></image> Ferro<h2 id="alexaFerro" ></h2></div><div><button onclick="alexaAddOre('ferro')">+</button><button onclick="alexaRemoveOre('ferro')">-</button></div></div>
+    <div class="divItensInventario"><div class="divItensInventarioInside"><image class="oreImage" src="https://res.cloudinary.com/di9oiqvom/image/upload/v1676728504/Minecraft/raw_gold_gr9awc.png" ></image> Ouro<h2 id="alexaOuro" ></h2></div><div><button onclick="alexaAddOre('ouro')">+</button><button onclick="alexaRemoveOre('ouro')">-</button></div></div>
+    <div class="divItensInventario"><div class="divItensInventarioInside"><image class="oreImage" src="https://res.cloudinary.com/di9oiqvom/image/upload/v1676728503/Minecraft/diamond_oqxakz.png" ></image> Diamante<h2 id="alexaDiamante" ></h2></div><div><button onclick="alexaAddOre('diamante')">+</button><button onclick="alexaRemoveOre('diamante')">-</button></div></div>
+    <div class="divItensInventario"><div class="divItensInventarioInside"><image class="oreImage" src="https://res.cloudinary.com/di9oiqvom/image/upload/v1676728503/Minecraft/emerald_kagulm.png" ></image> Esmeralda<h2 id="alexaEsmeralda" ></h2></div><div><button onclick="alexaAddOre('esmeralda')">+</button><button onclick="alexaRemoveOre('esmeralda')">-</button></div></div>
+  </ul>
+
+  <a href='#' onclick="()=>{}"><image style="width: 80px;" src="https://static.wikia.nocookie.net/thetekkit/images/1/10/Iron_Chest.png/revision/latest?cb=20121020224539"></image>Baú Alexa</a>
+
+  <div class="form">
+    <input id="alexaInput" placeholder="New Item" maxlength="25">
+    <button onclick="addAlexaItem()">Add</button>
+  </div>
+  <ul id="alexaItens">
+  </ul>
+
+</section id="Marina">
+
+<section>
+  <h1>Marina</h1>
+  <image class="ImagemProfile" src="https://w7.pngwing.com/pngs/938/752/png-transparent-minecraft-pocket-edition-creeper-mob-minecraft-story-mode-skin-video-game-girl-creeper-thumbnail.png" ></image>
+
+  <ul>
+    <div class="divItensInventario"><div class="divItensInventarioInside"><image class="oreImage" src="https://res.cloudinary.com/di9oiqvom/image/upload/v1676728504/Minecraft/stripped_spruce_wood_czox2h.png"></image>Madeira<h2 id="marinaMadeira" ></h2></div><div><button onclick="marinaAddOre('madeira')">+</button><button onclick="marinaRemoveOre('madeira')">-</button></div></div>
+    <div class="divItensInventario"><div class="divItensInventarioInside"><image class="oreImage" src="https://res.cloudinary.com/di9oiqvom/image/upload/v1676728503/Minecraft/cobblestone_tyrx1k.png" ></image>Pedra<h2 id="marinaPedra" ></h2></div><div><button onclick="marinaAddOre('pedra')">+</button><button onclick="marinaRemoveOre('pedra')">-</button></div></div>
+    <div class="divItensInventario"><div class="divItensInventarioInside"><image class="oreImage" src="https://res.cloudinary.com/di9oiqvom/image/upload/v1676728504/Minecraft/iron_ingot_gtykv1.png" ></image> Ferro<h2 id="marinaFerro" ></h2></div><div><button onclick="marinaAddOre('ferro')">+</button><button onclick="marinaRemoveOre('ferro')">-</button></div></div>
+    <div class="divItensInventario"><div class="divItensInventarioInside"><image class="oreImage" src="https://res.cloudinary.com/di9oiqvom/image/upload/v1676728504/Minecraft/raw_gold_gr9awc.png" ></image> Ouro<h2 id="marinaOuro" ></h2></div><div><button onclick="marinaAddOre('ouro')">+</button><button onclick="marinaRemoveOre('ouro')">-</button></div></div>
+    <div class="divItensInventario"><div class="divItensInventarioInside"><image class="oreImage" src="https://res.cloudinary.com/di9oiqvom/image/upload/v1676728503/Minecraft/diamond_oqxakz.png" ></image> Diamante<h2 id="marinaDiamante" ></h2></div><div><button onclick="marinaAddOre('diamante')">+</button><button onclick="marinaRemoveOre('diamante')">-</button></div></div>
+    <div class="divItensInventario"><div class="divItensInventarioInside"><image class="oreImage" src="https://res.cloudinary.com/di9oiqvom/image/upload/v1676728503/Minecraft/emerald_kagulm.png" ></image> Esmeralda<h2 id="marinaEsmeralda" ></h2></div><div><button onclick="marinaAddOre('esmeralda')">+</button><button onclick="marinaRemoveOre('esmeralda')">-</button></div></div>
+  </ul>
+
+  <a href='#' onclick="()=>{}"><image style="width: 80px;" src="https://static.wikia.nocookie.net/thetekkit/images/1/10/Iron_Chest.png/revision/latest?cb=20121020224539"></image>Baú Marina</a>
+
+  <div class="form">
+    <input id="marinaInput" placeholder="New Item" maxlength="20">
+    <button onclick="addMarinaItem()">Add</button>
+  </div>
+  <ul id="marinaItens">
+  </ul>
+
+</section>
+  
+
+
+  <script>
+
+    let steveData = {
+      itens: [],
+      madeira: 0,
+      pedra: 0,
+      ferro: 0,
+      ouro: 0,
+      diamante: 0,
+      esmeralda: 0,
+      bau: [],
+    };
+
+    let alexaData = {
+      itens: [],
+      madeira: 0,
+      pedra: 0,
+      ferro: 0,
+      ouro: 0,
+      diamante: 0,
+      esmeralda: 0,
+      bau: [],
+    };
+
+    let marinaData = {
+      itens: [],
+      madeira: 0,
+      pedra: 0,
+      ferro: 0,
+      ouro: 0,
+      diamante: 0,
+      esmeralda: 0,
+      bau: [],
+    };
+
+    const steveItens = document.querySelector('#steveItens');
+    const alexaItens = document.querySelector('#alexaItens');
+    const marinaItens = document.querySelector('#marinaItens');
+
+    const steveInput = document.querySelector('#steveInput');
+    const alexaInput = document.querySelector('#alexaInput');
+    const marinaInput = document.querySelector('#marinaInput');
+    
+    steveData = JSON.parse(localStorage.getItem("@steveData")) || steveData;
+    alexaData = JSON.parse(localStorage.getItem("@alexaData")) || alexaData;
+    marinaData = JSON.parse(localStorage.getItem("@marinaData")) || marinaData;
+
+    DisplaySteveOres();
+    DisplaySteveItens(steveData.itens);
+    DisplayalexaOres()
+    DisplayAlexaItens(alexaData.itens);
+    DisplaymarinaOres()
+    DisplayMarinaItens(marinaData.itens);
+  
+    
+    function DisplaySteveItens(array) {
+      steveItens.innerHTML = '';
+      for (let i = 0; i < array.length; i++) {
+        const li = document.createElement("li");
+        li.innerHTML = `<div class="inventarioItem"><h3>${array[i]} <h3><a href='#' onclick='deleteSteveItem(${i});'>X</a></div>`
+        steveItens.appendChild(li);
+      }
+    }
+
+    function DisplayAlexaItens(array) {
+      alexaItens.innerHTML = '';
+      for (let i = 0; i < array.length; i++) {
+        const li = document.createElement("li");
+        li.innerHTML = `<div class="inventarioItem"><h3>${array[i]} <h3><a href='#' onclick='deleteAlexaItem(${i});'>X</a></div>`
+        alexaItens.appendChild(li);
+      }
+    }
+
+    function DisplayMarinaItens(array) {
+      marinaItens.innerHTML = '';
+      for (let i = 0; i < array.length; i++) {
+        const li = document.createElement("li");
+        li.innerHTML = `<div class="inventarioItem"><h3>${array[i]} <h3><a href='#' onclick='deleteMarinaItem(${i});'>X</a></div>`
+        marinaItens.appendChild(li);
+      }
+    }
+
+    function addSteveItem() {
+      if (steveInput.value == '') {
+        alert("Digite o nome do item!")
+      } else {
+        steveData.itens.push(steveInput.value);
+      steveInput.value = '';
+      DisplaySteveItens(steveData.itens);
+      saveData();
+      }
+    }
+
+    function addAlexaItem() {
+      if (alexaInput.value == '') {
+        alert("Digite o nome do item!")
+      } else {
+        alexaData.itens.push(alexaInput.value);
+      alexaInput.value = '';
+      DisplayAlexaItens(alexaData.itens);
+      saveData();
+      }
+    }
+
+    function addMarinaItem() {
+      if (marinaInput.value == '') {
+        alert("Digite o nome do item!")
+      } else {
+        marinaData.itens.push(marinaInput.value);
+      marinaInput.value = '';
+      DisplayMarinaItens(marinaData.itens);
+      saveData();
+      }
+    }
+
+    // function senha() {
+    //   inputado = prompt("Digite A Senha de Steve")
+    //   if (inputado == "ravi") { addItem() }
+    // }
+
+    function deleteSteveItem(i) {
+      steveData.itens.splice(i, 1);
+      DisplaySteveItens(steveData.itens);
+      saveData();
+    }
+
+    function deleteAlexaItem(i) {
+      alexaData.itens.splice(i, 1);
+      DisplayAlexaItens(alexaData.itens);
+      saveData();
+    }
+
+    function deleteMarinaItem(i) {
+      marinaData.itens.splice(i, 1);
+      DisplayMarinaItens(marinaData.itens);
+      saveData();
+    }
+
+    function saveData() {
+      localStorage.setItem("@steveData", JSON.stringify(steveData));
+      localStorage.setItem("@alexaData", JSON.stringify(alexaData));
+      localStorage.setItem("@marinaData", JSON.stringify(marinaData));
+    }
+
+    function DisplaySteveOres() {
+      document.querySelector('#steveMadeira').innerHTML = steveData.madeira;
+      document.querySelector('#stevePedra').innerHTML = steveData.pedra;
+      document.querySelector('#steveFerro').innerHTML = steveData.ferro;
+      document.querySelector('#steveOuro').innerHTML = steveData.ouro;
+      document.querySelector('#steveDiamante').innerHTML = steveData.diamante;
+      document.querySelector('#steveEsmeralda').innerHTML = steveData.esmeralda;
+    }
+
+    function DisplayalexaOres() {
+      document.querySelector('#alexaMadeira').innerHTML = alexaData.madeira;
+      document.querySelector('#alexaPedra').innerHTML = alexaData.pedra;
+      document.querySelector('#alexaFerro').innerHTML = alexaData.ferro;
+      document.querySelector('#alexaOuro').innerHTML = alexaData.ouro;
+      document.querySelector('#alexaDiamante').innerHTML = alexaData.diamante;
+      document.querySelector('#alexaEsmeralda').innerHTML = alexaData.esmeralda;
+    }
+
+    function DisplaymarinaOres() {
+      document.querySelector('#marinaMadeira').innerHTML = marinaData.madeira;
+      document.querySelector('#marinaPedra').innerHTML = marinaData.pedra;
+      document.querySelector('#marinaFerro').innerHTML = marinaData.ferro;
+      document.querySelector('#marinaOuro').innerHTML = marinaData.ouro;
+      document.querySelector('#marinaDiamante').innerHTML = marinaData.diamante;
+      document.querySelector('#marinaEsmeralda').innerHTML = marinaData.esmeralda;
+    }
+
+    function SteveAddOre(ore) {
+
+      switch (ore) {
+        case 'madeira': steveData.madeira++; break; 
+        case 'pedra': steveData.pedra++; break; 
+        case 'ferro': steveData.ferro++; break;
+        case 'ouro': steveData.ouro++; break;
+        case 'diamante': steveData.diamante++; break;
+        case 'esmeralda': steveData.esmeralda++; break;
+      };
+
+      saveData();
+      DisplaySteveOres();
+    }
+
+    function alexaAddOre(ore) {
+
+      switch (ore) {
+        case 'madeira': alexaData.madeira++; break; 
+        case 'pedra': alexaData.pedra++; break; 
+        case 'ferro': alexaData.ferro++; break;
+        case 'ouro': alexaData.ouro++; break;
+        case 'diamante': alexaData.diamante++; break;
+        case 'esmeralda': alexaData.esmeralda++; break;
+      };
+
+      saveData();
+      DisplayalexaOres();
+    }
+
+    function marinaAddOre(ore) {
+
+      switch (ore) {
+        case 'madeira': marinaData.madeira++; break; 
+        case 'pedra': marinaData.pedra++; break; 
+        case 'ferro': marinaData.ferro++; break;
+        case 'ouro': marinaData.ouro++; break;
+        case 'diamante': marinaData.diamante++; break;
+        case 'esmeralda': marinaData.esmeralda++; break;
+      };
+
+      saveData();
+      DisplaymarinaOres();
+    }
+
+    function SteveRemoveOre(ore) {
+
+      switch (ore) {
+        case 'madeira': if (steveData.madeira > 0) steveData.madeira--; break; 
+        case 'pedra': if (steveData.pedra > 0) steveData.pedra--; break; 
+        case 'ferro': if (steveData.ferro > 0) steveData.ferro--; break;
+        case 'ouro': if (steveData.ouro > 0) steveData.ouro--; break;
+        case 'diamante': if (steveData.diamante > 0) steveData.diamante--; break;
+        case 'esmeralda': if (steveData.esmeralda > 0) steveData.esmeralda--; break;
+      };
+
+      saveData();
+      DisplaySteveOres();
+    }
+
+    function alexaRemoveOre(ore) {
+
+      switch (ore) {
+        case 'madeira': if (alexaData.madeira > 0) alexaData.madeira--; break; 
+        case 'pedra': if (alexaData.pedra > 0) alexaData.pedra--; break; 
+        case 'ferro': if (alexaData.ferro > 0) alexaData.ferro--; break;
+        case 'ouro': if (alexaData.ouro > 0) alexaData.ouro--; break;
+        case 'diamante': if (alexaData.diamante > 0) alexaData.diamante--; break;
+        case 'esmeralda': if (alexaData.esmeralda > 0) alexaData.esmeralda--; break;
+      };
+
+      saveData();
+      DisplayalexaOres();
+    }
+
+    function marinaRemoveOre(ore) {
+
+      switch (ore) {
+        case 'madeira': if (marinaData.madeira > 0) marinaData.madeira--; break; 
+        case 'pedra': if (marinaData.pedra > 0) marinaData.pedra--; break; 
+        case 'ferro': if (marinaData.ferro > 0) marinaData.ferro--; break;
+        case 'ouro': if (marinaData.ouro > 0) marinaData.ouro--; break;
+        case 'diamante': if (marinaData.diamante > 0) marinaData.diamante--; break;
+        case 'esmeralda': if (marinaData.esmeralda > 0) marinaData.esmeralda--; break;
+      };
+
+      saveData();
+      DisplaymarinaOres();
+    }
+
+
+  </script>
+</body>
+
+</html>
